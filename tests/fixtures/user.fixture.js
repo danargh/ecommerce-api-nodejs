@@ -7,6 +7,7 @@ const password = 'password1';
 const salt = bcrypt.genSaltSync(8);
 const hashedPassword = bcrypt.hashSync(password, salt);
 
+// Keadaan awal user saat testing
 const userOne = {
    _id: mongoose.Types.ObjectId(),
    name: faker.name.findName(),

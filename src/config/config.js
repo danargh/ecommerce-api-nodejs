@@ -6,6 +6,7 @@ dotenv.config({ path: path.join(__dirname, '../../.env') });
 
 const envVarsSchema = Joi.object()
    .keys({
+      // NODE_ENV berasal dari script di package json
       NODE_ENV: Joi.string().valid('production', 'development', 'test').required(),
       PORT: Joi.number().default(3000),
       MONGODB_URL: Joi.string().required().description('Mongo DB url'),
@@ -36,6 +37,7 @@ module.exports = {
    env: envVars.NODE_ENV,
    port: envVars.PORT,
    mongoose: {
+      // membuat database baru untuk keperluan testing
       url: envVars.MONGODB_URL + (envVars.NODE_ENV === 'test' ? '-test' : ''),
       options: {
          useCreateIndex: true,
