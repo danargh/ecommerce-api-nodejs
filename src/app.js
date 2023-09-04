@@ -34,7 +34,7 @@ app.use(express.urlencoded({ extended: true }));
 app.use(xss());
 app.use(mongoSanitize());
 
-// gzip compression
+// gzip compression for performance
 app.use(compression());
 
 // enable cors

@@ -39,11 +39,6 @@ module.exports = {
    mongoose: {
       // membuat database baru untuk keperluan testing
       url: envVars.MONGODB_URL + (envVars.NODE_ENV === 'test' ? '-test' : ''),
-      options: {
-         useCreateIndex: true,
-         useNewUrlParser: true,
-         useUnifiedTopology: true,
-      },
    },
    jwt: {
       secret: envVars.JWT_SECRET,

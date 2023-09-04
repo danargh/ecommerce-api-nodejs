@@ -17,6 +17,8 @@ router.post('/verify-email', validate(authValidation.verifyEmail), authControlle
 
 module.exports = router;
 
+// komentar dapat dibaca oleh swagger UI
+
 /**
  * @swagger
  * tags:
