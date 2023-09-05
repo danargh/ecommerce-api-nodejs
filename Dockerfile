@@ -1,4 +1,4 @@
-FROM node:alpine
+FROM node:18-alpine
 
 RUN mkdir -p /usr/src/node-app && chown -R node:node /usr/src/node-app
 
@@ -10,6 +10,9 @@ USER node
 
 RUN yarn install --pure-lockfile
 
+# mengubah kepemilikan folder
 COPY --chown=node:node . .
 
 EXPOSE 3000
+
+CMD ["yarn", "dev"]
